@@ -1,0 +1,308 @@
+/* Reset default margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling umum */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Warna latar belakang halaman */
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan untuk kedalaman */
+}
+
+.header .logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.header .user-info {
+    font-size: 16px;
+    text-align: right;
+}
+
+.header .user-info span {
+    font-weight: bold;
+    display: block;
+}
+
+.header .user-info a {
+    color: white;
+    text-decoration: none;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Sidebar */
+.side-nav {
+    background: teal;
+    width: 15vw;
+    max-width: 200px;
+    height: 100vh;
+    padding-top: 1rem;
+    position: relative;
+    z-index: 999;
+    transition: transform 0.3s ease; /* Transisi untuk efek halus */
+}
+
+.side-nav.open {
+    transform: translateX(0); /* Menampilkan sidebar */
+}
+
+.side-nav .brand {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.side-nav nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.side-nav nav a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.side-nav nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Warna latar belakang saat hover */
+}
+
+/* Konten */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px; /* Sudut melengkung pada konten */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk kedalaman */
+}
+
+/* Halaman Create Ticket */
+.content h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content form {
+    display: flex;
+    flex-direction: column; /* Mengatur agar elemen dalam form menjadi kolom */
+    gap: 15px; /* Jarak antara elemen form */
+}
+
+.content form label {
+    font-weight: bold; /* Membuat label lebih menonjol */
+}
+
+.content form input[type="text"],
+.content form input[type="number"],
+.content form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s; /* Transisi untuk border saat fokus */
+}
+
+.content form input[type="text"]:focus,
+.content form input[type="number"]:focus,
+.content form textarea:focus {
+    border-color: teal; /* Warna border saat fokus */
+}
+
+/* Tombol */
+.content form button {
+    padding: 10px 15px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Efek transisi untuk tombol */
+}
+
+.content form button:hover {
+    background-color: darkcyan; /* Mengubah warna tombol saat hover */
+}
+
+/* Tabel */
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.content table th,
+.content table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.content table th {
+    background-color: #333;
+    color: white;
+}
+
+.content table td {
+    background-color: white;
+}
+
+.content table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.content table a {
+    color: red;
+    text-decoration: none;
+}
+
+.content table a:hover {
+    text-decoration: underline;
+}
+
+/* Search Engine */
+.content form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end; /* Mengubah ke flex-end agar tombol berada di kanan */
+    align-items: center;
+}
+
+.content form input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.content form button {
+    padding: 10px 15px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content form button:hover {
+    background-color: darkcyan;
+}
+
+/* Responsive Styling */
+@media (max-width: 900px) {
+    .side-nav {
+        width: 40vw; /* Memperbesar sidebar di layar kecil */
+        max-width: 150px; /* Batas maksimal untuk sidebar */
+        height: auto; /* Tinggi otomatis untuk sidebar */
+    }
+
+    .header {
+        flex-direction: column; /* Mengubah header ke kolom */
+        align-items: flex-start; /* Mengatur alignment */
+    }
+
+    .header .user-info {
+        text-align: left; /* Menyesuaikan alignment */
+    }
+
+    .container {
+        flex-direction: column; /* Mengubah arah container menjadi kolom */
+    }
+
+    .content {
+        padding: 10px; /* Mengurangi padding konten */
+    }
+
+    .content form {
+        flex-direction: column; /* Mengubah arah form menjadi kolom */
+        align-items: stretch; /* Membuat elemen memenuhi lebar yang tersedia */
+    }
+
+    .content form input[type="text"] {
+        margin-right: 0; /* Menghapus margin kanan untuk tampilan kolom */
+        margin-bottom: 10px; /* Menambahkan margin bawah untuk pemisahan */
+        width: 100%; /* Menggunakan lebar 100% untuk responsivitas */
+    }
+
+    .content form button {
+        width: 100%; /* Menggunakan lebar 100% untuk responsivitas */
+    }
+
+    .content table {
+        font-size: 14px; /* Mengurangi ukuran font tabel di layar kecil */
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 15px; /* Mengurangi padding untuk tampilan kecil */
+    }
+
+    .content form input[type="text"],
+    .content form input[type="number"],
+    .content form textarea {
+        width: 100%; /* Mengatur lebar input dan textarea menjadi 100% */
+    }
+
+    .content form button {
+        width: 100%; /* Mengatur lebar tombol menjadi 100% */
+    }
+}
+
+/* Hamburger Button Style */
+.hamburger {
+    display: none; /* Sembunyikan hamburger secara default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Hamburger Menu */
+@media (max-width: 900px) {
+    .hamburger {
+        display: block; /* Tampilkan hamburger di layar kecil */
+    }
+
+    .side-nav {
+        display: none; /* Sembunyikan sidebar secara default */
+    }
+
+    .side-nav.open {
+        display: block; /* Tampilkan sidebar ketika tombol hamburger ditekan */
+        transform: translateX(0); /* Kembali ke posisi normal */
+    }
+}
